@@ -15,7 +15,7 @@
     .main__chat
       = render partial: './shared/messages'
 
-    .main__form
+    -# .main__form
     -#   = form_for [@グループ, @メッセージ] do |f|
     -#     .main__form__box
     -#       = f.text_field :content, class: 'main__form__box__input__text', placeholder: 'type a message'
@@ -24,3 +24,12 @@
     -#           = fa_icon 'picture-o', class: 'icon__form fa-image'
     -#           = f.file_field :image, class: 'main__form__box__input__image__file'
     -#       = f.submit 'Send', class: 'main__form__box__submit__btn'
+
+    .main__form
+      .main__form__box
+        %input#message_content.main__form__box__input__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        .main__form__box__input
+          %label.main__form__box__input__image{:for => "message_image"}
+            %i.icon__form.fa-image
+            %input#message_image.main__form__box__input__image__file{:name => "message[image]", :type => "file"}/
+        %input.main__form__box__submit__btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
