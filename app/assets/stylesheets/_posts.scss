@@ -1,0 +1,220 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  // サイド部分
+  .side {
+    width: 300px;
+    color: white;
+    float: left;
+    // ヘッダー部分
+    &__header {
+      background-color: $DeepUltramarine;
+      height: $HeaderHeight;
+      display: flex;
+      align-items: center;
+      padding: 0px 20px;
+      // ヘッダーの箱divの設定
+      &__box h3{
+        font-weight: bold;
+      }
+      &__box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        // アイコン用の箱div設定
+        &__option {
+          display: flex;
+          // アイコンを横並びに設定
+          &__list li {
+            font-size: 100%;
+          }
+          &__list {
+            flex-direction: row;
+            margin-left: 0.3rem;
+          }
+        }
+      }
+    }
+    // グループリスト部分
+    &__list {
+      height: calc(100vh - 100px);
+      background-color: $Ultramarine;
+      padding: 20px 20px 0px;
+      overflow: scroll;
+      // linkタグの見た目を設定
+      &__link {
+        text-decoration: none;
+        color: white;
+      }
+      // グループのまとまりを設定
+      &__group {
+        margin-bottom: 40px;
+        // グループ名
+        &__name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        // 最後のメッセージ
+        &__message {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  
+  // メイン部分
+  .main {
+    width: $ChatMain;
+    float: left;
+    // ヘッダー部分
+    &__header {
+      height: $HeaderHeight;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #eee;
+      overflow: scroll;
+      // 左の箱
+      &__left-box {
+        margin-top: 35px;
+        // グループ名
+        &__current-group {
+          font-size: 20px;
+          color: $LightBlack;
+          margin-bottom: 15px;
+        }
+        // グループの所属ユーザー表示エリア
+        &__member {
+          display: flex;
+          font-size: 12px;
+          color: $DarkGray;
+          // 所属ユーザー名
+          &__name {
+            padding-right: 5px;
+          }
+        }
+      }
+      // Editボタンのlinkタグ
+      &__edit {
+        color: $Blue;
+        text-decoration: none;
+        // Editボタンの見た目
+        &__btn {
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          margin-top: 30px;
+          border: solid 1px $Blue;
+          position: absolute;
+          right: 40px;
+        }
+      }
+    }
+    // チャット部分
+    &__chat {
+      height: $ChatFormMessage;
+      padding: 46px 40px;
+      background-color: $LightWhite;
+      overflow: scroll;
+      // メッセージの箱
+      &__message {
+        padding-bottom: 40px;
+        // 投稿者の情報
+        &__upper-info {
+          display: flex;
+          margin-bottom: 10px;
+          // 投稿者
+          &__name {
+            color: $Gray;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          // 投稿時間
+          &__time {
+            color: $DarkGray;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+        }
+        // 投稿したテキスト
+        &__text {
+          color: $Gray;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        &__image {
+          width:auto;
+          height:auto;
+          max-width:25%;
+          max-height:25%;
+        }
+      }
+    }
+  
+    // 投稿部分
+    &__form {
+      height: $ChatForm;
+      padding: 20px 40px;
+      background-color: $LightGray;
+      // 投稿エリアの箱部分
+      &__box {
+        display: flex;
+        // テキスト入力＆ファイル投稿の箱部分
+        &__input {
+          position: relative;
+          // width: 100vw;
+          // テキスト投稿フォーム
+          &__text {
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            color: $Gray;
+            border-style: none;
+          }
+          // イメージ投稿のラベル
+          &__image {
+            font-size: 1.3rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            // イメージ投稿フォーム（設定消し）
+            &__file {
+              display: none;
+            }
+          }
+        }
+        // 送信ボタンの箱部分
+        &__submit {
+          // 送信ボタンの見た目
+          &__btn {
+            width: 100px;
+            height: 50px;
+            padding: 0 30px;
+            margin-left: 15px;
+            background-color: $Blue;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  // アイコンの設定
+  .icon {
+    // ヘッダーのアイコン(グループ作成、ユーザー編集)
+    &__header {
+      color: white;
+    }
+    // フォームのアイコン(画像投稿ボタン)
+    &__form {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+  }

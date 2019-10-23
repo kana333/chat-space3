@@ -1,0 +1,36 @@
+// 変数を定義する
+
+// 高さ・幅
+
+// headerの高さ(side、mainで共通)
+$HeaderHeight: 100px;
+// mianの幅(mainで共通)
+$ChatMain: calc(100vw - 300px);
+// main__chatの高さ
+$ChatFormMessage: calc(100vh - 190px);
+// main__ormの高さ
+$ChatForm: 90px;
+
+
+// 色
+
+// 深い群青色
+$DeepUltramarine: #253141;
+// 群青色
+$Ultramarine: #2f3e51;
+// 青色
+$Blue: #38aef0;
+/// アラートの赤
+$AlertOrange: #F35500;
+// うすい白色
+$LightWhite: #fafafa;
+// 白色
+$White: #fff;
+// 灰色
+$LightGray: #ddd;
+// やや濃い灰色
+$Gray: #434a54;
+// 濃い灰色
+$DarkGray: #999999;
+/// うすい黒色
+$LightBlack: #333;
