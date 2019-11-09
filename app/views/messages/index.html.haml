@@ -9,7 +9,7 @@
         %ul.main__header__left-box__member
           Member：
           = render partial: './shared/members', locals: { members: ["松村さん", "橋本さん"] }
-      =link_to new_group_path, class: "main__header__edit", data: {"turbolinks": false} do
+      =link_to root_path, class: "main__header__edit", data: {"turbolinks": false} do
         .main__header__edit__btn
           Edit
     .main__chat
