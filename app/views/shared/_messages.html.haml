@@ -1,8 +1,11 @@
 .main__chat__message
   .main__chat__message__upper-info
     %p.main__chat__message__upper-info__name
-      ほげさん
+      = messages.user.ほげさん
     %p.main__chat__message__upper-info__time
-      2019/10/22 12:50
-  %p.main__chat__message__text
-    テキストほげほげ
+      = messages.created_at.strftime("2019/10/22 12:50")
+  - if messages.content.present?  
+    = messages.content.テキストほげほげ
+  = image_tag messages.image.url, class: 'main__chat__message__image' if messages.image.present? 
+      
+  

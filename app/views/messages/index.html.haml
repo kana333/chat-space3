@@ -12,7 +12,7 @@
         .main__header__edit__btn
           Edit
     .main__chat
-      = render './shared/messages'
+      = render partial: './shared/messages', collection: @messages
 
     .main__form
       = form_for [@group, @message] do |f|
