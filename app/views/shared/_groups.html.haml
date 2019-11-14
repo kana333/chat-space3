@@ -1,6 +1,7 @@
-=link_to root_path, class: "side__list__link", data: {"turbolinks" => false} do
-  .side__list__group
-    %p.side__list__group__name
-      グループ名
-    %p.side__list__group__message
-      最後のメッセージ
+- current_user.groups.each do |group|
+  =link_to group_messages_path(group), class: "side__list__link" do
+    .side__list__group
+      %p.side__list__group__name
+        = group.name
+      %p.side__list__group__message
+        = group.show_last_message
